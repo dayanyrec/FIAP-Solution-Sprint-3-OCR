@@ -85,3 +85,13 @@ Documentação em:
 - Processamento de imagens em Python com OpenCV: https://docs.opencv.org/master/d2/d96/tutorial_py_table_of_contents_imgproc.html  
 
 - Documentação sobre transformação geométrica com OpenCV em Python,usado para executar a rotação: https://docs.opencv.org/master/da/d6e/tutorial_py_geometric_transformations.html
+
+
+## Extra  
+
+Instalação das dependências utilizando virtual environment:  
+```
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+```
