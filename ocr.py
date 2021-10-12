@@ -1,12 +1,9 @@
-from os import defpath
 import pytesseract as ocr
-from PIL import Image, ImageDraw
-from matplotlib import pyplot as plt
+from PIL import Image
 import cv2 as cv
 import numpy as np
 import re
 import pprint as pp
-import sys
 from pathlib import Path
 
 #imgName = 'img/helloworld.jpg'
@@ -15,7 +12,7 @@ from pathlib import Path
 #imgName = 'img/cupom2-branco-rot.jpg'
 #imgName = 'img/condor1.jpeg'
 #imgName = 'img/mc1.jpeg'
-imgName = 'img/farmacia1.jpeg'
+imgName = 'img/cupom.jpg'
 #imgName = 'img/condor3.jpeg'
 
 # Lê a imagem em array (colorida)
