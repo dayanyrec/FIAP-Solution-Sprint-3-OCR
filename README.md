@@ -1,4 +1,10 @@
-# FIAP-Solution-Sprint-3-OCR  
+# FIAP Solution Sprint 3 - OCR
+
+Grupo 13: 
+- Henrique Ribeiro
+- Gabriel Martins
+- Dayany Espindola
+- Beatriz Mendonça
 
 ## Setup em SO Windows  
 
