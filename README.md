@@ -10,6 +10,11 @@ Grupo 13:
 
 1. Instale o Python:  
 https://www.python.org/downloads/
+    1.1. Digite na busca do Windows: Editar as variáveis de ambiente do sistema  
+    1.2. Clique em Variáveis de Ambiente. Na tabela de cima, "Variáveis do Usuário", localize a variável "Path", selecione-a e clique em Editar.
+    1.3. Clique em "Novo" e adicione os caminhos com seu username:  
+    `C:\Users\nome.usuario\AppData\Local\Programs\Python\Python39\Scripts\`  
+    `C:\Users\nome.usuario\AppData\Local\Programs\Python\Python39\`  
 
 2. Instale uma IDE, por exemplo, o Visual Studio Code:  
 https://code.visualstudio.com/download
