@@ -28,12 +28,15 @@ https://code.visualstudio.com/download
     A documentação do Pytesseract está disponível em:  
 https://pypi.org/project/pytesseract/
 
-8. Adicione uma variável de sistema na variável PATH, para isso:  
+8. Instale o Google OCR Tesseract:  
+https://github.com/UB-Mannheim/tesseract/wiki
+
+9. Adicione uma variável de sistema na variável PATH, para isso:  
     9.1. Digite na busca do Windows: Editar as variáveis de ambiente do sistema  
     9.2. Clique em Variáveis de Ambiente. Na tabela de baixo "Variáveis do Sistema", localize a variável "Path", selecione-a e clique em Editar.
     9.3. Clique em "Novo" e adicione o caminho onde você instalou o Tesseract OCR, se foi no caminha padrão será isso: `C:\Program Files\Tesseract-OCR\`
 
-9. Reinicie seu terminal, fechando e abrindo novamente o VS Code.
+10. Reinicie seu terminal, fechando e abrindo novamente o VS Code.
 
 ## Verificação da instalação  
 
