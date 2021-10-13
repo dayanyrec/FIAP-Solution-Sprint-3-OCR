@@ -77,6 +77,10 @@ print(ocr.get_languages(config=''))
 2. Instale o opencv-python  
 `pip install opencv-python`
 
+    Para mais informações vá em:
+    - https://docs.opencv.org/master/
+    - https://docs.opencv.org/master/d5/de5/tutorial_py_setup_in_windows.html
+
 ## Links úteis
 
 - https://techtutorialsx.com/2019/04/13/python-opencv-converting-image-to-black-and-white/  
