@@ -190,12 +190,16 @@ def image_find_textarea(img, image_data):
     return (img, text_area_coord)
 
 def image_crop(img, image_coord):
-    left = image_coord['left']-10
-    top = image_coord['top']-10
-    right = image_coord['right']+10
-    bottom = image_coord['bottom']+10
-    cropped_image = img[top:bottom, left:right]
-    new_name = image_save(cropped_image, "cropped")
+    if(image_coord['left'] >= 10 and image_coord['top'] >= 10):
+        left = image_coord['left']-10
+        top = image_coord['top']-10
+        right = image_coord['right']+10
+        bottom = image_coord['bottom']+10
+        cropped_image = img[top:bottom, left:right]
+        new_name = image_save(cropped_image, "cropped")
+    else:
+        cropped_image = img
+        new_name = image_save(cropped_image, "cropped")
     return (cropped_image, new_name)
 
 # Abre janela com a imagem já aberta pelo OpenCV
@@ -216,6 +220,7 @@ def structure_image_data(image_data):
     for word in image_data[1:]:
         if ((word[-1] != '-1') and int(word[0]) == 5) and (len(word) == header_len):
             block_num = word[2]
+            par_num = word[3]
             line_num = word[4]
             word_num = word[5]
             text = word[-1]
@@ -224,10 +229,14 @@ def structure_image_data(image_data):
             except:
                 blocks[block_num] = {}
             try:
-                blocks[block_num][line_num]
+                blocks[block_num][par_num]
             except:
-                blocks[block_num][line_num] = {}
-            blocks[block_num][line_num][word_num] = text
+                blocks[block_num][par_num] = {}
+            try:
+                blocks[block_num][par_num][line_num]
+            except:
+                blocks[block_num][par_num][line_num] = {}
+            blocks[block_num][par_num][line_num][word_num] = text
     #pp.pprint(blocks)
     return blocks
 
@@ -235,12 +244,13 @@ def rebuild_image_text(blocks):
     text = ""
     line_list = []
     for block_num, lines in blocks.items():
-        for line_num, words in lines.items():
-            for word_num, word in words.items():
-                text = text + " " + word
-            line_list.append(text)
-            #print(text)
-            text = ""
+        for par_num, pars in lines.items():
+            for line_num, words in pars.items():
+                for word_num, word in words.items():
+                    text = text + " " + word
+                line_list.append(text)
+                #print(text)
+                text = ""
     return line_list
 
 def search_text(line_list, text):
@@ -277,7 +287,7 @@ def find_products(line_list):
     return products
 
 def find_total(line_list):
-    (index, text) = search_text(line_list, "(valor|total)(.*)(rs|r\$|\$)(\D*)([0-9]+[,\.][0-9]{2})")
+    (index, text) = search_text(line_list, "(valor|total)(.*)(rs|r\$|\$)(\D*)([0-9]+[,\.][0-9]{2})$")
     return text
 
 def find_customer(line_list):
